@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<configuration label="Esri Globe">
+    <imageurl></imageurl>
+    <linkurl>http://127.0.0.1</linkurl>
+    <tooltip>http://127.0.0.1</tooltip>
+</configuration>
+
+<!--
+    See Static Image widget tag reference at
+    http://links.esri.com/staticimagewidget
+-->
