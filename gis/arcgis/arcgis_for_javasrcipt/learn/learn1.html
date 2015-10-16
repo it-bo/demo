@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+     <title>My fisrt ArcGis Map</title>
+     <link rel="stylesheet" type="text/css" href="/arcgis_js_api/js/dojo/dijit/themes/tundra/tundra.css"/>
+   <script type="text/javascript" src="/arcgis_js_api/init.js"></script>
+   
+     <link rel="stylesheet" type="text/css" href="/arcgis_js_api/js/esri/css/esri.css" />
+     <script type="text/javascript">
+       dojo.require("esri.map");
+       var myMap;
+       function init() {
+         myMap = new esri.Map("arcgisDiv");
+        var myTiledMapServiceLayer = new esri.layers.ArcGISTiledMapServiceLayer("http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer");
+         myMap.addLayer(myTiledMapServiceLayer);
+
+         myMap.setZoom(4);
+         dojo.connect(myMap, "onMouseMove", showCoordinates);
+         dojo.connect(myMap, "onMouseDrag", showCoordinates);
+       }
+      
+       dojo.addOnLoad(init);
+       function showCoordinates(evt) {
+            var mp = evt.mapPoint;
+            dojo.byId("info").innerHTML = mp.x + ", " + mp.y;
+        }
+     </script>
+  </head>
+  <body>
+     <div id="arcgisDiv" class="tundra" style="width:900px; height:600px; border:1px solid #000;"></div>
+     <div id="info" style="padding:5px; margin:5px; background-color:#eee;"></div>
+  </body>
+</html>
