@@ -1,0 +1,15 @@
+{
+  "name": "bmap",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.3.0",
+    "angular-route": "^1.3.0",
+    "angular-sanitize": "^1.3.0",
+    "openlayers3": "https://github.com/tombatossals/ol3-compiled.git"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.3.0"
+  },
+  "appPath": "app",
+  "moduleName": "bmapApp"
+}
